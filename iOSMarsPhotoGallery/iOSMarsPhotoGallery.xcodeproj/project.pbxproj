@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		373EB60024A174D900AFA79F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB5FF24A174D900AFA79F /* AppDelegate.swift */; };
+		373EB60224A174D900AFA79F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB60124A174D900AFA79F /* SceneDelegate.swift */; };
+		373EB60424A174D900AFA79F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB60324A174D900AFA79F /* ContentView.swift */; };
+		373EB60624A174DC00AFA79F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373EB60524A174DC00AFA79F /* Assets.xcassets */; };
+		373EB60924A174DC00AFA79F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373EB60824A174DC00AFA79F /* Preview Assets.xcassets */; };
+		373EB60C24A174DC00AFA79F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373EB60A24A174DC00AFA79F /* LaunchScreen.storyboard */; };
+		373EB61724A174DC00AFA79F /* iOSMarsPhotoGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB61624A174DC00AFA79F /* iOSMarsPhotoGalleryTests.swift */; };
+		373EB62224A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB62124A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		373EB61324A174DC00AFA79F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 373EB5F424A174D900AFA79F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 373EB5FB24A174D900AFA79F;
+			remoteInfo = iOSMarsPhotoGallery;
+		};
+		373EB61E24A174DC00AFA79F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 373EB5F424A174D900AFA79F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 373EB5FB24A174D900AFA79F;
+			remoteInfo = iOSMarsPhotoGallery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		373EB5FC24A174D900AFA79F /* iOSMarsPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMarsPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		373EB5FF24A174D900AFA79F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		373EB60124A174D900AFA79F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		373EB60324A174D900AFA79F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		373EB60524A174DC00AFA79F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		373EB60824A174DC00AFA79F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		373EB60B24A174DC00AFA79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		373EB60D24A174DC00AFA79F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373EB61224A174DC00AFA79F /* iOSMarsPhotoGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMarsPhotoGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		373EB61624A174DC00AFA79F /* iOSMarsPhotoGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMarsPhotoGalleryTests.swift; sourceTree = "<group>"; };
+		373EB61824A174DC00AFA79F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373EB61D24A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMarsPhotoGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		373EB62124A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMarsPhotoGalleryUITests.swift; sourceTree = "<group>"; };
+		373EB62324A174DC00AFA79F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		373EB5F924A174D900AFA79F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		373EB60F24A174DC00AFA79F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		373EB61A24A174DC00AFA79F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		373EB5F324A174D900AFA79F = {
+			isa = PBXGroup;
+			children = (
+				373EB5FE24A174D900AFA79F /* iOSMarsPhotoGallery */,
+				373EB61524A174DC00AFA79F /* iOSMarsPhotoGalleryTests */,
+				373EB62024A174DC00AFA79F /* iOSMarsPhotoGalleryUITests */,
+				373EB5FD24A174D900AFA79F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		373EB5FD24A174D900AFA79F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				373EB5FC24A174D900AFA79F /* iOSMarsPhotoGallery.app */,
+				373EB61224A174DC00AFA79F /* iOSMarsPhotoGalleryTests.xctest */,
+				373EB61D24A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		373EB5FE24A174D900AFA79F /* iOSMarsPhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				373EB5FF24A174D900AFA79F /* AppDelegate.swift */,
+				373EB60124A174D900AFA79F /* SceneDelegate.swift */,
+				373EB60324A174D900AFA79F /* ContentView.swift */,
+				373EB60524A174DC00AFA79F /* Assets.xcassets */,
+				373EB60A24A174DC00AFA79F /* LaunchScreen.storyboard */,
+				373EB60D24A174DC00AFA79F /* Info.plist */,
+				373EB60724A174DC00AFA79F /* Preview Content */,
+			);
+			path = iOSMarsPhotoGallery;
+			sourceTree = "<group>";
+		};
+		373EB60724A174DC00AFA79F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				373EB60824A174DC00AFA79F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		373EB61524A174DC00AFA79F /* iOSMarsPhotoGalleryTests */ = {
+			isa = PBXGroup;
+			children = (
+				373EB61624A174DC00AFA79F /* iOSMarsPhotoGalleryTests.swift */,
+				373EB61824A174DC00AFA79F /* Info.plist */,
+			);
+			path = iOSMarsPhotoGalleryTests;
+			sourceTree = "<group>";
+		};
+		373EB62024A174DC00AFA79F /* iOSMarsPhotoGalleryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				373EB62124A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.swift */,
+				373EB62324A174DC00AFA79F /* Info.plist */,
+			);
+			path = iOSMarsPhotoGalleryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		373EB5FB24A174D900AFA79F /* iOSMarsPhotoGallery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 373EB62624A174DC00AFA79F /* Build configuration list for PBXNativeTarget "iOSMarsPhotoGallery" */;
+			buildPhases = (
+				373EB5F824A174D900AFA79F /* Sources */,
+				373EB5F924A174D900AFA79F /* Frameworks */,
+				373EB5FA24A174D900AFA79F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSMarsPhotoGallery;
+			productName = iOSMarsPhotoGallery;
+			productReference = 373EB5FC24A174D900AFA79F /* iOSMarsPhotoGallery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		373EB61124A174DC00AFA79F /* iOSMarsPhotoGalleryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 373EB62924A174DC00AFA79F /* Build configuration list for PBXNativeTarget "iOSMarsPhotoGalleryTests" */;
+			buildPhases = (
+				373EB60E24A174DC00AFA79F /* Sources */,
+				373EB60F24A174DC00AFA79F /* Frameworks */,
+				373EB61024A174DC00AFA79F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				373EB61424A174DC00AFA79F /* PBXTargetDependency */,
+			);
+			name = iOSMarsPhotoGalleryTests;
+			productName = iOSMarsPhotoGalleryTests;
+			productReference = 373EB61224A174DC00AFA79F /* iOSMarsPhotoGalleryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		373EB61C24A174DC00AFA79F /* iOSMarsPhotoGalleryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 373EB62C24A174DC00AFA79F /* Build configuration list for PBXNativeTarget "iOSMarsPhotoGalleryUITests" */;
+			buildPhases = (
+				373EB61924A174DC00AFA79F /* Sources */,
+				373EB61A24A174DC00AFA79F /* Frameworks */,
+				373EB61B24A174DC00AFA79F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				373EB61F24A174DC00AFA79F /* PBXTargetDependency */,
+			);
+			name = iOSMarsPhotoGalleryUITests;
+			productName = iOSMarsPhotoGalleryUITests;
+			productReference = 373EB61D24A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		373EB5F424A174D900AFA79F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Pedro Trujillo V";
+				TargetAttributes = {
+					373EB5FB24A174D900AFA79F = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					373EB61124A174DC00AFA79F = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 373EB5FB24A174D900AFA79F;
+					};
+					373EB61C24A174DC00AFA79F = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 373EB5FB24A174D900AFA79F;
+					};
+				};
+			};
+			buildConfigurationList = 373EB5F724A174D900AFA79F /* Build configuration list for PBXProject "iOSMarsPhotoGallery" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 373EB5F324A174D900AFA79F;
+			productRefGroup = 373EB5FD24A174D900AFA79F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				373EB5FB24A174D900AFA79F /* iOSMarsPhotoGallery */,
+				373EB61124A174DC00AFA79F /* iOSMarsPhotoGalleryTests */,
+				373EB61C24A174DC00AFA79F /* iOSMarsPhotoGalleryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		373EB5FA24A174D900AFA79F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373EB60C24A174DC00AFA79F /* LaunchScreen.storyboard in Resources */,
+				373EB60924A174DC00AFA79F /* Preview Assets.xcassets in Resources */,
+				373EB60624A174DC00AFA79F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		373EB61024A174DC00AFA79F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		373EB61B24A174DC00AFA79F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		373EB5F824A174D900AFA79F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373EB60024A174D900AFA79F /* AppDelegate.swift in Sources */,
+				373EB60224A174D900AFA79F /* SceneDelegate.swift in Sources */,
+				373EB60424A174D900AFA79F /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		373EB60E24A174DC00AFA79F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373EB61724A174DC00AFA79F /* iOSMarsPhotoGalleryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		373EB61924A174DC00AFA79F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373EB62224A174DC00AFA79F /* iOSMarsPhotoGalleryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		373EB61424A174DC00AFA79F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 373EB5FB24A174D900AFA79F /* iOSMarsPhotoGallery */;
+			targetProxy = 373EB61324A174DC00AFA79F /* PBXContainerItemProxy */;
+		};
+		373EB61F24A174DC00AFA79F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 373EB5FB24A174D900AFA79F /* iOSMarsPhotoGallery */;
+			targetProxy = 373EB61E24A174DC00AFA79F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		373EB60A24A174DC00AFA79F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				373EB60B24A174DC00AFA79F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		373EB62424A174DC00AFA79F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		373EB62524A174DC00AFA79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		373EB62724A174DC00AFA79F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iOSMarsPhotoGallery/Preview Content\"";
+				DEVELOPMENT_TEAM = HRSGN27MYJ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOSMarsPhotoGallery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pedrotrujillov.iOSMarsPhotoGallery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		373EB62824A174DC00AFA79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iOSMarsPhotoGallery/Preview Content\"";
+				DEVELOPMENT_TEAM = HRSGN27MYJ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOSMarsPhotoGallery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pedrotrujillov.iOSMarsPhotoGallery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		373EB62A24A174DC00AFA79F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HRSGN27MYJ;
+				INFOPLIST_FILE = iOSMarsPhotoGalleryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pedrotrujillov.iOSMarsPhotoGalleryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSMarsPhotoGallery.app/iOSMarsPhotoGallery";
+			};
+			name = Debug;
+		};
+		373EB62B24A174DC00AFA79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HRSGN27MYJ;
+				INFOPLIST_FILE = iOSMarsPhotoGalleryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pedrotrujillov.iOSMarsPhotoGalleryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSMarsPhotoGallery.app/iOSMarsPhotoGallery";
+			};
+			name = Release;
+		};
+		373EB62D24A174DC00AFA79F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HRSGN27MYJ;
+				INFOPLIST_FILE = iOSMarsPhotoGalleryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pedrotrujillov.iOSMarsPhotoGalleryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSMarsPhotoGallery;
+			};
+			name = Debug;
+		};
+		373EB62E24A174DC00AFA79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HRSGN27MYJ;
+				INFOPLIST_FILE = iOSMarsPhotoGalleryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pedrotrujillov.iOSMarsPhotoGalleryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSMarsPhotoGallery;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		373EB5F724A174D900AFA79F /* Build configuration list for PBXProject "iOSMarsPhotoGallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373EB62424A174DC00AFA79F /* Debug */,
+				373EB62524A174DC00AFA79F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		373EB62624A174DC00AFA79F /* Build configuration list for PBXNativeTarget "iOSMarsPhotoGallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373EB62724A174DC00AFA79F /* Debug */,
+				373EB62824A174DC00AFA79F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		373EB62924A174DC00AFA79F /* Build configuration list for PBXNativeTarget "iOSMarsPhotoGalleryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373EB62A24A174DC00AFA79F /* Debug */,
+				373EB62B24A174DC00AFA79F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		373EB62C24A174DC00AFA79F /* Build configuration list for PBXNativeTarget "iOSMarsPhotoGalleryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373EB62D24A174DC00AFA79F /* Debug */,
+				373EB62E24A174DC00AFA79F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 373EB5F424A174D900AFA79F /* Project object */;
+}
