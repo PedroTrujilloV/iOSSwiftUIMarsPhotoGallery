@@ -11,16 +11,20 @@ import SwiftUI
 import Combine
 
 class PinterestCollectionViewModel: ObservableObject {
-    
+    private let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&page=1&api_key=4AeCJdckn1CYnwMFlRLHN2zz6d6lmCEPzxWgp5sE"
+                    //"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=580&camera=FHAZ&page=1&api_key=DEMO_KEY"
+
+//    @State 
     @Published var results:PhotosModel?
     private let url:URL
     private var cancelable:AnyCancellable?
     private static let urlProcessingQueue = DispatchQueue(label: "url_processing")
     
-    private var numberOfColumns = 3
+    private var numberOfColumnsForPortrait = 3
+    @Published private var numberOfColumns:Int = 3
     @Published private var numberOfRows:Int = 1 {
         didSet{
-            self.calculateNumberOfObjectsPerColumn()
+            self.calculateNumberOfObjectsPerColumnForTraits()
             self.loadDataSource()
         }
     }
@@ -31,21 +35,21 @@ class PinterestCollectionViewModel: ObservableObject {
     @Published public var collectionViewDataSource:Array<Array<ImageModel>> = []
     @Published public var cellSize:CGSize = CGSize(width: 50, height: 50)
     @Published public var frameSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+    private var cellWidth:CGFloat
     
-    init(url:URL, columns: Int = 3 ) {
-        self.url = url
-        self.numberOfColumns = columns
+    init( columnsForPortrait: Int = 3 ) {
+        self.numberOfColumnsForPortrait = columnsForPortrait
+        self.cellWidth =  ( (UIScreen.main.bounds.size.width - (self.spacing * 2)) / CGFloat(self.numberOfColumnsForPortrait) )
+        if let nasaURL = URL(string: urlString)  {
+            self.url = nasaURL
+        } else {
+            fatalError("PinterestCollectionViewModel.init.url error: Provided URL string doesn't work")
+        }
         self.load()
-//        printFontFamilies()
+        self.recalculateLayout()
+
     }
-    
-//    func printFontFamilies(){
-//        for familyString in UIFont.familyNames {
-//            for fontName in UIFont.fontNames(forFamilyName: familyString) {
-//                print("\n> fontName: \(fontName)")
-//            }
-//        }
-//    }
+
     
     deinit {
         cancelable?.cancel()
@@ -65,28 +69,39 @@ class PinterestCollectionViewModel: ObservableObject {
                 case .finished:
                     print("\n\n>>\nPinterestCollectionViewModel.cancelable success")
                 case .failure(let error):
-                    print("\n\n>>\nPinterestCollectionViewModel.cancelable error: \(error)")
+                    print("\n\n>>\nPinterestCollectionViewModel.cancelable error: \n \(error)")
                 }
-            }, receiveValue: { (photosModel) in
+            }, receiveValue: { [weak self] (photosModel) in
                 print("\n\n>>\nreceiveValue: \(String(describing: photosModel))")
-                self.results = photosModel
-                self.calculateNumberOfRows()
-                self.calculateNumberOfObjectsPerColumn()
-                self.loadDataSource()
-                self.updateCellSize()
-                self.updateFrameSize()
+                self?.results = photosModel
+                self?.recalculateLayout()
             })
+    }
+    
+    private func recalculateLayout(){
+        self.calculateNumberOfRows()
+        self.calculateNumberOfColumns()
+        self.calculateNumberOfObjectsPerColumnForTraits()
+        self.loadDataSource()
+        self.updateCellSize()
+        self.updateFrameSize()
     }
     
     private func calculateNumberOfRows(){
         self.numberOfRows = self.results != nil ? self.results!.photos.count : 0
     }
     
-    private func calculateNumberOfObjectsPerColumn () {
+    private func calculateNumberOfColumns(){
+        self.numberOfColumns = Int ( (UIScreen.main.bounds.size.width) / (self.cellWidth) )
+        print("\n\n>>\n calculateNumberOfColumns bounds \(UIScreen.main.bounds.size.width) / cellWidth \(self.cellWidth) = numberOfColumns \(numberOfColumns)")
+    }
+    
+    private func calculateNumberOfObjectsPerColumnForTraits () {
         let columnObjects = self.numberOfRows/self.numberOfColumns
         let leftover = numberOfRows % numberOfColumns
         let total = leftover > 0 ? columnObjects + 1 : columnObjects
         self.numberOfObjectsPerColumn = total
+        
     }
     
     private func loadDataSource() {
@@ -102,11 +117,9 @@ class PinterestCollectionViewModel: ObservableObject {
     }
     
     private func updateCellSize(){
-        let w = (UIScreen.main.bounds.size.width / CGFloat(self.numberOfColumns)) - (self.spacing * 2)
         let h = (UIScreen.main.bounds.size.height/3) - (self.spacing * 2)
-        self.cellSize = CGSize(width: w, height: h)
+        self.cellSize = CGSize(width: self.cellWidth, height: h)
     }
-    
     private func updateFrameSize(){
         let w = (UIScreen.main.bounds.size.width)
         let h = (UIScreen.main.bounds.size.height)

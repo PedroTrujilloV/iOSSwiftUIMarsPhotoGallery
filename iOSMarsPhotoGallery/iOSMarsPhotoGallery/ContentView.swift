@@ -12,13 +12,8 @@ import Combine
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-            
-        PinterestCollectionView()
-            .background(
-                Image("background")
-                .resizable()
-                .edgesIgnoringSafeArea(Edge.Set.all)
-                .scaledToFit()
-        )        
+        NavigationView {
+            PinterestCollectionView()
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
