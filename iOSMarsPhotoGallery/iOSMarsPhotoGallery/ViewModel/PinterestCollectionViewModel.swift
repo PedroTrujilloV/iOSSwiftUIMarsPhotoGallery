@@ -36,7 +36,16 @@ class PinterestCollectionViewModel: ObservableObject {
         self.url = url
         self.numberOfColumns = columns
         self.load()
+//        printFontFamilies()
     }
+    
+//    func printFontFamilies(){
+//        for familyString in UIFont.familyNames {
+//            for fontName in UIFont.fontNames(forFamilyName: familyString) {
+//                print("\n> fontName: \(fontName)")
+//            }
+//        }
+//    }
     
     deinit {
         cancelable?.cancel()

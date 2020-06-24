@@ -21,13 +21,14 @@ struct ImageOverlay: View {
         ZStack {
             Text(self.text)
                 .fontWeight(Font.Weight.light)
+            .font(Font.custom("NewMars", size: 10))
                 .font(.caption)
 //                .font(.system(size: 12.0))
                 .padding(3)
                 .foregroundColor(.white)
         }.background(Color.black)
         .opacity(0.8)
-        .cornerRadius(20.0)
+        .cornerRadius(10.0)
         .padding(3)
     }
 } //overlay: "Credit: Ricardo Gomez Angel"

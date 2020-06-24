@@ -25,6 +25,7 @@
 		373EB64624A287DE00AFA79F /* PinterestCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64524A287DE00AFA79F /* PinterestCollectionViewModel.swift */; };
 		373EB64824A29ADC00AFA79F /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64724A29ADC00AFA79F /* CameraModel.swift */; };
 		373EB64A24A2A4F900AFA79F /* PinterestCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */; };
+		3773C9C524A337230012D57F /* newmars.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373EB64B24A3304300AFA79F /* newmars.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		373EB64524A287DE00AFA79F /* PinterestCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCollectionViewModel.swift; sourceTree = "<group>"; };
 		373EB64724A29ADC00AFA79F /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 		373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCollectionView.swift; sourceTree = "<group>"; };
+		373EB64B24A3304300AFA79F /* newmars.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = newmars.ttf; path = "../../../documentation/New-Mars/newmars.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				373EB60124A174D900AFA79F /* SceneDelegate.swift */,
 				373EB60324A174D900AFA79F /* ContentView.swift */,
 				373EB60524A174DC00AFA79F /* Assets.xcassets */,
+				373EB64D24A3304F00AFA79F /* Fonts */,
 				373EB60A24A174DC00AFA79F /* LaunchScreen.storyboard */,
 				373EB60D24A174DC00AFA79F /* Info.plist */,
 				373EB60724A174DC00AFA79F /* Preview Content */,
@@ -204,6 +207,14 @@
 				373EB63D24A1E0A500AFA79F /* ImageCache.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		373EB64D24A3304F00AFA79F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				373EB64B24A3304300AFA79F /* newmars.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3773C9C524A337230012D57F /* newmars.ttf in Resources */,
 				373EB60C24A174DC00AFA79F /* LaunchScreen.storyboard in Resources */,
 				373EB60924A174DC00AFA79F /* Preview Assets.xcassets in Resources */,
 				373EB60624A174DC00AFA79F /* Assets.xcassets in Resources */,

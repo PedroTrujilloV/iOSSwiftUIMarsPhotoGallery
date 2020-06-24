@@ -17,7 +17,7 @@ struct PinterestCollectionView: View {
     private var cancelable: AnyCancellable?
 
     init() {
-        let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&api_key=DEMO_KEY"//
+        let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&api_key=4AeCJdckn1CYnwMFlRLHN2zz6d6lmCEPzxWgp5sE"//
 //        let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=580&camera=FHAZ&page=1&api_key=DEMO_KEY"
         if let nasaURL = URL(string: urlString)  {
             printerestVM = PinterestCollectionViewModel(url: nasaURL)
@@ -48,7 +48,7 @@ struct PinterestCollectionView: View {
                                 AsyncImageView(url: URL(string: self.printerestVM.collectionViewDataSource[indexColumn][indexRow].img_src)!,
                                            placeholder: Text("Loading from \nMAVEN \nsatelite...")
                                              .font(.caption)
-//                                            .font(.system(size:10))
+                                            .font(Font.custom("NewMars", size: 10))
                                             .fontWeight(Font.Weight.light)
                                             .multilineTextAlignment(.center),
                                        cache: self.cache,
@@ -67,14 +67,15 @@ struct PinterestCollectionView: View {
                                     .aspectRatio(2/3, contentMode: .fit)
                             }
                         }
+                        .background(Color.clear)
                     }
                 }
                 .frame(width: self.printerestVM.frameSize.width)
-//                .background(Color.orange)
+                .background(Color.clear)
             }
         }
         .frame(width: UIScreen.main.bounds.size.width, height: self.printerestVM.frameSize.height)
-//        .background(Color.green)
+        .background(Color.clear)
     }
 
 }
@@ -82,5 +83,11 @@ struct PinterestCollectionView: View {
 struct PinterestCollectionView_Previews: PreviewProvider {
     static var previews: some View {
         PinterestCollectionView()
+        .background(
+                Image("background")
+                .resizable()
+                .edgesIgnoringSafeArea(Edge.Set.all)
+                .scaledToFit()
+        )
     }
 }
