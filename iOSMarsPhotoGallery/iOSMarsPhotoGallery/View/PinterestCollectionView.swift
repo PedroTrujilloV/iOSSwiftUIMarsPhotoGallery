@@ -43,10 +43,10 @@ struct PinterestCollectionView: View {
         ScrollView(Axis.Set.vertical, showsIndicators: true) {
             if !printerestVM.collectionViewDataSource.isEmpty {
                 HStack(alignment: VerticalAlignment.top, spacing: printerestVM.spacing) {
-                    ForEach(printerestVM.collectionViewDataSource, id: \.self) { itemsInColumn in
+                    ForEach(printerestVM.collectionViewDataSource, id: \.indices) { itemsInColumn in
                         VStack(alignment: HorizontalAlignment.center, spacing: self.printerestVM.spacing) {
-                            ForEach(itemsInColumn, id: \.self){ item in
-                                AsyncImageView(url: URL(string: item.img_src)!,
+                            ForEach(itemsInColumn, id: \.identifier){ item in
+                                AsyncImageView(url: URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!,//item.img_src)!,
                                            placeholder: Text("Loading from \nMAVEN \nsatelite...")
     //                                        .font(.system(size:12))
                                             .fontWeight(Font.Weight.light)
@@ -55,7 +55,6 @@ struct PinterestCollectionView: View {
                                        configuration: {
                                         $0.resizable()
                                 })
-//                                    .frame(width: self.printerestVM.cellSize.width, height: self.printerestVM.cellSize.height, alignment: .center)
                                     .frame(minWidth: self.printerestVM.cellSize.width,
                                             idealWidth: self.printerestVM.cellSize.width,
                                             maxWidth: self.printerestVM.cellSize.width,
@@ -80,6 +79,6 @@ struct PinterestCollectionView: View {
 
 struct PinterestCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        PinterestCollectionView()
     }
 }

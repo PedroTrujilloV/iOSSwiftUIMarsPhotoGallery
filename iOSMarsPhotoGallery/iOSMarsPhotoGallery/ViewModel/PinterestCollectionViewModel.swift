@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-let aDataSource = [imagesURL,imagesURL,imagesURL]
 class PinterestCollectionViewModel: ObservableObject {
     
     @Published var results:PhotosModel?
@@ -19,7 +18,7 @@ class PinterestCollectionViewModel: ObservableObject {
     private static let urlProcessingQueue = DispatchQueue(label: "url_processing")
     
     private var numberOfColumns = 3
-    @State private var numberOfRows:Int = 1 {
+    @Published private var numberOfRows:Int = 1 {
         didSet{
             self.calculateNumberOfObjectsPerColumn()
             self.loadDataSource()
@@ -27,7 +26,7 @@ class PinterestCollectionViewModel: ObservableObject {
     }
     
     public var spacing:CGFloat = 5.0
-    @State var numberOfObjectsPerColumn: Int = 1
+    @Published var numberOfObjectsPerColumn: Int = 1
 
     @Published public var collectionViewDataSource:Array<Array<ImageModel>> = []
     @Published public var cellSize:CGSize = CGSize(width: 50, height: 50)
@@ -75,8 +74,8 @@ class PinterestCollectionViewModel: ObservableObject {
     }
     
     private func calculateNumberOfObjectsPerColumn () {
-        let columnObjects = self.numberOfRows 
-        let leftover = numberOfRows 
+        let columnObjects = self.numberOfRows/self.numberOfColumns
+        let leftover = numberOfRows % numberOfColumns
         let total = leftover > 0 ? columnObjects + 1 : columnObjects
         self.numberOfObjectsPerColumn = total
     }
@@ -84,7 +83,15 @@ class PinterestCollectionViewModel: ObservableObject {
     private func loadDataSource() {
         print("\n\n>>\ncollectionViewDataSource self.results.photos: \(String(describing: self.results?.photos))")
         let chuncked = self.results != nil ? self.results!.photos.chunked(into: numberOfObjectsPerColumn) : []
-          print("\n\n>>\ncollectionViewDataSource chuncked: \(String(describing: self.results?.photos))")
+//          print("\n\n>>\ncollectionViewDataSource chuncked: \(String(describing:chuncked))")
+        var i = 0
+        print("\n\n>>\n numberOfObjectsPerColumn:\(numberOfObjectsPerColumn) numberOfRows: \(numberOfRows)")
+        for chunk in chuncked {
+            
+            print("\n\n>>\ncollectionViewDataSource chunck [\(i)]: \(String(describing: chunk))")
+            
+            i += 1
+        }
         self.collectionViewDataSource = chuncked
     }
     
