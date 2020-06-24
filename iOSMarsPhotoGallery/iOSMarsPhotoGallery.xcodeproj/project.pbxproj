@@ -24,6 +24,7 @@
 		373EB64424A2664900AFA79F /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64324A2664900AFA79F /* PhotosModel.swift */; };
 		373EB64624A287DE00AFA79F /* PinterestCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64524A287DE00AFA79F /* PinterestCollectionViewModel.swift */; };
 		373EB64824A29ADC00AFA79F /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64724A29ADC00AFA79F /* CameraModel.swift */; };
+		373EB64A24A2A4F900AFA79F /* PinterestCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		373EB64324A2664900AFA79F /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		373EB64524A287DE00AFA79F /* PinterestCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCollectionViewModel.swift; sourceTree = "<group>"; };
 		373EB64724A29ADC00AFA79F /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				373EB63524A1DE6F00AFA79F /* AsyncImageView.swift */,
+				373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				373EB60424A174D900AFA79F /* ContentView.swift in Sources */,
 				373EB63924A1DF1100AFA79F /* Array+Extension.swift in Sources */,
 				373EB63624A1DE6F00AFA79F /* AsyncImageView.swift in Sources */,
+				373EB64A24A2A4F900AFA79F /* PinterestCollectionView.swift in Sources */,
 				373EB63224A1DA5800AFA79F /* ImageModel.swift in Sources */,
 				373EB64624A287DE00AFA79F /* PinterestCollectionViewModel.swift in Sources */,
 			);

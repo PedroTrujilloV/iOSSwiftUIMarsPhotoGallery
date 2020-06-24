@@ -11,7 +11,7 @@ import Foundation
 struct ImageModel: Codable, Hashable {
     
     let identifier = UUID()
-    let img_src:URL
+    let img_src:String
     let earth_date:String
     let camera : CameraModel
     //    let rover:Data
