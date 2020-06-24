@@ -17,7 +17,7 @@ struct PinterestCollectionView: View {
     private var cancelable: AnyCancellable?
 
     init() {
-        let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&api_key=4AeCJdckn1CYnwMFlRLHN2zz6d6lmCEPzxWgp5sE"//
+        let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&api_key=DEMO_KEY"//
 //        let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=580&camera=FHAZ&page=1&api_key=DEMO_KEY"
         if let nasaURL = URL(string: urlString)  {
             printerestVM = PinterestCollectionViewModel(url: nasaURL)
@@ -42,17 +42,17 @@ struct PinterestCollectionView: View {
         ScrollView(Axis.Set.vertical, showsIndicators: true) {
             if !printerestVM.collectionViewDataSource.isEmpty {
                 HStack(alignment: VerticalAlignment.top, spacing: self.printerestVM.spacing) {
-                    ForEach(printerestVM.collectionViewDataSource, id: \.self) { arrayColumn in
+                    ForEach(0 ..< self.printerestVM.collectionViewDataSource.endIndex) { indexColumn in
                         VStack(alignment: HorizontalAlignment.center, spacing: self.printerestVM.spacing) {
-                            ForEach(arrayColumn, id: \.self){ item in
-                                AsyncImageView(url: URL(string: item.img_src)!,
+                            ForEach(0 ..< self.printerestVM.collectionViewDataSource[indexColumn].endIndex){ indexRow in
+                                AsyncImageView(url: URL(string: self.printerestVM.collectionViewDataSource[indexColumn][indexRow].img_src)!,
                                            placeholder: Text("Loading from \nMAVEN \nsatelite...")
                                              .font(.caption)
 //                                            .font(.system(size:10))
                                             .fontWeight(Font.Weight.light)
                                             .multilineTextAlignment(.center),
                                        cache: self.cache,
-                                       text: item.camera.full_name,
+                                       text: self.printerestVM.collectionViewDataSource[indexColumn][indexRow].camera.full_name,
                                        configuration: {
                                         $0.resizable()
                                 })
@@ -60,7 +60,7 @@ struct PinterestCollectionView: View {
 //                                        minWidth: self.printerestVM.cellSize.width,
                                           // idealWidth: self.printerestVM.cellSize.width * 1.1,
                                         maxWidth: (UIScreen.main.bounds.size.width / CGFloat(self.printerestVM.collectionViewDataSource.count)) - (self.printerestVM.spacing * CGFloat(self.printerestVM.collectionViewDataSource.count)),
-                                        minHeight: self.printerestVM.cellSize.height * CGFloat(Float.random(in: 1..<1.3)),
+                                        minHeight: self.printerestVM.cellSize.height * CGFloat(Float.random(in: 0.8..<1.2)),
 //                                            idealHeight: self.printerestVM.cellSize.height * CGFloat(Float.random(in: 1..<1.19)),
 //                                            maxHeight: self.printerestVM.cellSize.height * CGFloat(Float.random(in: 1.2..<1.5)),
                                             alignment: Alignment.center)

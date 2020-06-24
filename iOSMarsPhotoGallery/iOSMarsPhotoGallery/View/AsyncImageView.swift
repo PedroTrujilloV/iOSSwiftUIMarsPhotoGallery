@@ -41,10 +41,14 @@ struct AsyncImageView<Placeholder:View>: View {
     private var text:String = ""
     
     init(url:URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil, text:String? = "", configuration: @escaping(Image) -> Image = {$0}) {
+        
         self.loader = ImageViewModel(url: url, cache: cache)
         self.placeholder = placeholder
         self.configuration = configuration
         self.text = text!
+        
+        print("\n\n>>\nAsyncImageView : \(String(describing: url)) \(String(describing: text))")
+
     }
     
     private var image: some View {
