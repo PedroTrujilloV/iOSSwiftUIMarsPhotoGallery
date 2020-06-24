@@ -15,14 +15,3 @@ struct ContentView_Previews: PreviewProvider {
         PinterestCollectionView()
     }
 }
-
-    
-//    private var list: some View {
-//        List(0..<numberOfRows, id: \.self) {_ in
-//            AsyncImageView(url: self.url,
-//                       placeholder: Text("Loading from MAVEN satelite..."),
-//                       cache: self.cache)
-//                .frame( minHeight: 100, idealHeight: 200, maxHeight: 300, alignment: .center)
-//                .aspectRatio(2/3, contentMode: .fit)
-//        }
-//    }

@@ -83,21 +83,18 @@ class PinterestCollectionViewModel: ObservableObject {
     private func loadDataSource() {
         print("\n\n>>\ncollectionViewDataSource self.results.photos: \(String(describing: self.results?.photos))")
         let chuncked = self.results != nil ? self.results!.photos.chunked(into: numberOfObjectsPerColumn) : []
-//          print("\n\n>>\ncollectionViewDataSource chuncked: \(String(describing:chuncked))")
         var i = 0
         print("\n\n>>\n numberOfObjectsPerColumn:\(numberOfObjectsPerColumn) numberOfRows: \(numberOfRows)")
         for chunk in chuncked {
-            
-            print("\n\n>>\ncollectionViewDataSource chunck [\(i)]: \(String(describing: chunk))")
-            
+            print("\n\n>>\ncollectionViewDataSource chunck [\(i)]: \(String(describing: chunk)) . count: \(chunk.count)")
             i += 1
         }
         self.collectionViewDataSource = chuncked
     }
     
     private func updateCellSize(){
-        let w = (UIScreen.main.bounds.size.width/3) - (self.spacing * 2)
-        let h = (UIScreen.main.bounds.size.height/2) - (self.spacing * 2)
+        let w = (UIScreen.main.bounds.size.width / CGFloat(self.numberOfColumns)) - (self.spacing * 2)
+        let h = (UIScreen.main.bounds.size.height/3) - (self.spacing * 2)
         self.cellSize = CGSize(width: w, height: h)
     }
     
