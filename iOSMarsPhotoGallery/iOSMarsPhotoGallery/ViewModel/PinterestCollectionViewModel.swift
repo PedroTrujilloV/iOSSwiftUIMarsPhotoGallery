@@ -11,10 +11,12 @@ import SwiftUI
 import Combine
 
 class PinterestCollectionViewModel: ObservableObject {
-    private let urlString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&page=1&api_key=4AeCJdckn1CYnwMFlRLHN2zz6d6lmCEPzxWgp5sE"
-                    //"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=580&camera=FHAZ&page=1&api_key=DEMO_KEY"
+    private let urlString :String = {
+            let stringurl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2000&camera=FHAZ&page=1&api_key="
+            let apiKey:String = ProcessInfo.processInfo.environment["API_KEY"] ?? "DEMO_KEY"
+            return stringurl + apiKey
+    }()//"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=580&camera=FHAZ&page=1&api_key=DEMO_KEY"
 
-//    @State 
     @Published var results:PhotosModel?
     private let url:URL
     private var cancelable:AnyCancellable?
@@ -47,9 +49,7 @@ class PinterestCollectionViewModel: ObservableObject {
         }
         self.load()
         self.recalculateLayout()
-
     }
-
     
     deinit {
         cancelable?.cancel()

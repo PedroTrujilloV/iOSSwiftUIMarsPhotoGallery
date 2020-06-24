@@ -21,13 +21,13 @@ struct PinterestCollectionView: View {
                 pinterestCollection
                 .onDisappear(perform: printerestVM.cancel)
 
-            }
+            } /*
             .background(
                 Image("background")
                 .resizable()
                 .edgesIgnoringSafeArea(Edge.Set.all)
                 .scaledToFill()
-            )
+            )*/
     }
     
     private var pinterestCollection: some View {
