@@ -21,7 +21,8 @@ struct PinterestCollectionView: View {
                 pinterestCollection
                 .onDisappear(perform: printerestVM.cancel)
 
-            } /*
+            }.padding(self.printerestVM.spacing)
+            /*
             .background(
                 Image("background")
                 .resizable()
