@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct CameraModel: Codable, Hashable {
+struct CameraModel: Codable, Hashable, Identifiable {
     
-    let identifier = UUID()
+    var identifier = UUID()
     let id: Int
     let name : String
     let rover_id : Int

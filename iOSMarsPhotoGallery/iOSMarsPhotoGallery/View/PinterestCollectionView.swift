@@ -20,15 +20,7 @@ struct PinterestCollectionView: View {
             ZStack(alignment: Alignment.center){
                 pinterestCollection
                 .onDisappear(perform: printerestVM.cancel)
-
-            }.padding(self.printerestVM.spacing)
-            /*
-            .background(
-                Image("background")
-                .resizable()
-                .edgesIgnoringSafeArea(Edge.Set.all)
-                .scaledToFill()
-            )*/
+            }
     }
     
     private var pinterestCollection: some View {

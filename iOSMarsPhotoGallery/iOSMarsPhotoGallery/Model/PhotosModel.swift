@@ -10,7 +10,7 @@ import Foundation
 
 struct PhotosModel : Codable, Hashable {
     
-    let identifier = UUID()
+    var identifier = UUID()
     let photos: [ImageModel]
     
     static func == (lhs: PhotosModel, rhs: PhotosModel) -> Bool {

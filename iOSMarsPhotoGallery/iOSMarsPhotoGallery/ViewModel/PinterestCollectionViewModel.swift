@@ -39,6 +39,19 @@ class PinterestCollectionViewModel: ObservableObject {
     @Published public var frameSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
     private var cellWidth:CGFloat
     
+    /* -- iOS 14 changes*/
+    
+    @Published public var columns:Array<GridItem> = []
+    @Published public var datasource:Array<ImageViewModel> = []
+    
+    private func calculateColumns(){
+        let gridItem = GridItem(.adaptive(minimum: self.cellWidth),
+                                spacing: self.spacing,
+                                alignment: .center)
+        columns = [gridItem]
+    }
+    /* --  end iOS 14 changes**/
+    
     init( columnsForPortrait: Int = 3 ) {
         self.numberOfColumnsForPortrait = columnsForPortrait
         self.cellWidth =  ( (UIScreen.main.bounds.size.width - (self.spacing * 2)) / CGFloat(self.numberOfColumnsForPortrait) )
@@ -49,6 +62,7 @@ class PinterestCollectionViewModel: ObservableObject {
         }
         self.load()
         self.recalculateLayout()
+        self.calculateColumns()
     }
     
     deinit {
@@ -104,7 +118,7 @@ class PinterestCollectionViewModel: ObservableObject {
         
     }
     
-    private func loadDataSource() {
+    fileprivate func oldLoadDatasource() {
         print("\n\n>>\ncollectionViewDataSource self.results.photos: \(String(describing: self.results?.photos))")
         let chuncked = self.results != nil ? self.results!.photos.chunked(into: numberOfObjectsPerColumn) : []
         var i = 0
@@ -114,6 +128,14 @@ class PinterestCollectionViewModel: ObservableObject {
             i += 1
         }
         self.collectionViewDataSource = chuncked
+    }
+    
+    private func loadDataSource() {
+        oldLoadDatasource()
+        self.datasource = self.results?.photos
+            .map({ (imageM) -> ImageViewModel in
+                return ImageViewModel(imageModel: imageM)
+            }) ?? []
     }
     
     private func updateCellSize(){

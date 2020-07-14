@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct ImageModel: Codable, Hashable {
-    
-    let identifier = UUID()
+struct ImageModel: Codable, Hashable { //}, Identifiable {
+//    var id: ObjectIdentifier
+    var identifier = UUID()
     let img_src:String
     let earth_date:String
     let camera : CameraModel
