@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370AF8B824BE5E990003640C /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AF8B724BE5E990003640C /* ImageOverlay.swift */; };
+		370AF8BA24BFA0F70003640C /* LoadingPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AF8B924BFA0F70003640C /* LoadingPlaceholder.swift */; };
 		373EB60024A174D900AFA79F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB5FF24A174D900AFA79F /* AppDelegate.swift */; };
 		373EB60224A174D900AFA79F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB60124A174D900AFA79F /* SceneDelegate.swift */; };
 		373EB60424A174D900AFA79F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB60324A174D900AFA79F /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		370AF8B724BE5E990003640C /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
+		370AF8B924BFA0F70003640C /* LoadingPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPlaceholder.swift; sourceTree = "<group>"; };
 		373EB5FC24A174D900AFA79F /* iOSMarsPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMarsPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373EB5FF24A174D900AFA79F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373EB60124A174D900AFA79F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		373EB64324A2664900AFA79F /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		373EB64524A287DE00AFA79F /* PinterestCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCollectionViewModel.swift; sourceTree = "<group>"; };
 		373EB64724A29ADC00AFA79F /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
-		373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCollectionView.swift; sourceTree = "<group>"; };
+		373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinterestCollectionView.swift; path = ../PinterestCollectionView.swift; sourceTree = "<group>"; };
 		373EB64B24A3304300AFA79F /* newmars.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = newmars.ttf; path = "../../../documentation/New-Mars/newmars.ttf"; sourceTree = "<group>"; };
 		37AEEFF324BD0C0E00530216 /* PinterestLazyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLazyGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370AF8BB24BFA5A20003640C /* old */ = {
+			isa = PBXGroup;
+			children = (
+				373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
 		373EB5F324A174D900AFA79F = {
 			isa = PBXGroup;
 			children = (
@@ -181,10 +191,11 @@
 		373EB63024A1D9F700AFA79F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				370AF8BB24BFA5A20003640C /* old */,
 				373EB63524A1DE6F00AFA79F /* AsyncImageView.swift */,
-				373EB64924A2A4F900AFA79F /* PinterestCollectionView.swift */,
 				37AEEFF324BD0C0E00530216 /* PinterestLazyGridView.swift */,
 				370AF8B724BE5E990003640C /* ImageOverlay.swift */,
+				370AF8B924BFA0F70003640C /* LoadingPlaceholder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 				373EB64424A2664900AFA79F /* PhotosModel.swift in Sources */,
 				373EB64824A29ADC00AFA79F /* CameraModel.swift in Sources */,
 				373EB60224A174D900AFA79F /* SceneDelegate.swift in Sources */,
+				370AF8BA24BFA0F70003640C /* LoadingPlaceholder.swift in Sources */,
 				373EB63E24A1E0A500AFA79F /* ImageCache.swift in Sources */,
 				373EB64024A1E0F800AFA79F /* ImageViewModel.swift in Sources */,
 				373EB63B24A1DF4800AFA79F /* EnvironmentValues+Extension.swift in Sources */,

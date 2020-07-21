@@ -9,28 +9,33 @@
 import SwiftUI
 //import Combine
 
+@available(iOS 14.0, *)
 struct PinterestLazyGridView: View {
-    @Environment(\.imageCache) var cache: ImageCache
     @ObservedObject var pinterestVM: PinterestCollectionViewModel = PinterestCollectionViewModel()
     var body: some View {
         ScrollView{
             LazyVGrid(columns: pinterestVM.columns,
+                      alignment:.center,
                       spacing: pinterestVM.spacing){
                 ForEach( pinterestVM.datasource){ imageVM in
                     AsyncImageView(viewModel: imageVM,
-                                   placeholder: Text("Loading.."),
-                                   cache: cache,
+                                   placeholder: LoadingPlaceholder(text: "Loading image.."),
                                    configuration: {$0.resizable()})
+                        .aspectRatio(contentMode: .fit)
                 }
             }
         }
     }
 }
 
+@available(iOS 14.0, *)
 struct PinterestLazyGridView_Previews:
     PreviewProvider {
     static var previews: some View {
-        let vm = PinterestCollectionViewModel(columnsForPortrait: 3)
-        PinterestLazyGridView(pinterestVM: vm)
+        Group {
+            PinterestLazyGridView()
+            PinterestLazyGridView()
+                .preferredColorScheme(.dark)
+        }
     }
 }

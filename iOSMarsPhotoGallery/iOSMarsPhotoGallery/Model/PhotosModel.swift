@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct PhotosModel : Codable, Hashable {
+struct PhotosModel: Decodable {//}: Codable, Hashable,Identifiable {
     
-    var identifier = UUID()
+//    var id = UUID()
     let photos: [ImageModel]
     
-    static func == (lhs: PhotosModel, rhs: PhotosModel) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
+//    static func == (lhs: PhotosModel, rhs: PhotosModel) -> Bool {
+//        return lhs.id == rhs.id
+//    }
 
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct CameraModel: Codable, Hashable, Identifiable {
+struct CameraModel: Decodable { //}: Codable, Hashable, Identifiable {
     
-    var identifier = UUID()
+//    var identifier = UUID()
     let id: Int
     let name : String
     let rover_id : Int
     let full_name : String
     
-    static func == (lhs: CameraModel, rhs: CameraModel) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
+//    static func == (lhs: CameraModel, rhs: CameraModel) -> Bool {
+//        return lhs.identifier == rhs.identifier
+//    }
 }

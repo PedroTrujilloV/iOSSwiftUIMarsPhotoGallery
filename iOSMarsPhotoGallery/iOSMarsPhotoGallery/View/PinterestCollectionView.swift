@@ -12,7 +12,6 @@ import Combine
 
 struct PinterestCollectionView: View {
     
-    @Environment(\.imageCache) var cache: ImageCache
     @ObservedObject private var printerestVM:PinterestCollectionViewModel = PinterestCollectionViewModel()
     private var cancelable: AnyCancellable?
     
@@ -27,20 +26,12 @@ struct PinterestCollectionView: View {
         ScrollView(Axis.Set.vertical, showsIndicators: true) {
             if !printerestVM.collectionViewDataSource.isEmpty {//
                 HStack(alignment: VerticalAlignment.top, spacing: self.printerestVM.spacing) {
-                    ForEach(0 ..< self.printerestVM.collectionViewDataSource.endIndex) { indexColumn in
+                    ForEach(self.printerestVM.collectionViewDataSource, id: \.self) { column in
                         VStack(alignment: HorizontalAlignment.center, spacing: self.printerestVM.spacing) {
-                            ForEach(0 ..< self.printerestVM.collectionViewDataSource[indexColumn].endIndex){ indexRow in
-                                AsyncImageView(url: URL(string: self.printerestVM.collectionViewDataSource[indexColumn][indexRow].img_src)!,
-                                           placeholder: Text("Loading images from \nCuriosity...")
-                                             .font(.caption)
-                                            .font(Font.custom("NewMars", size: 10))
-                                            .fontWeight(Font.Weight.light)
-                                            .multilineTextAlignment(.center),
-                                       cache: self.cache,
-                                       text: self.printerestVM.collectionViewDataSource[indexColumn][indexRow].camera.full_name,
-                                       configuration: {
-                                        $0.resizable()
-                                })
+                            ForEach(column){ imageVM in
+                                AsyncImageView(viewModel: imageVM,
+                                               placeholder: LoadingPlaceholder(text: "Loading from \nCuriosity..."),
+                                               configuration: { $0.resizable()})
                                     .frame(
                                         minWidth: self.printerestVM.cellSize.width,
                                         minHeight: self.printerestVM.cellSize.height * CGFloat(Float.random(in: 0.8..<1.2)),

@@ -11,7 +11,8 @@ import SwiftUI
 import Combine
 
 class ImageViewModel: ObservableObject, Identifiable {
-    
+
+    var identifier = UUID()
     private var model: ImageModel?
     @Published var image: UIImage?
     private var url: URL {
@@ -100,4 +101,16 @@ class ImageViewModel: ObservableObject, Identifiable {
         isLoading = false
     }
     
+}
+
+extension ImageViewModel: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
+}
+
+extension ImageViewModel: Equatable {
+    static func == (lhs: ImageViewModel, rhs: ImageViewModel) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
 }

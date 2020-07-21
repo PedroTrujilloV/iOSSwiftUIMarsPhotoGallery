@@ -17,6 +17,8 @@ class PinterestCollectionViewModel: ObservableObject {
             return stringurl + apiKey
     }()//"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=580&camera=FHAZ&page=1&api_key=DEMO_KEY"
 
+    @Environment(\.imageCache) var cache: ImageCache
+
     @Published var results:PhotosModel?
     private let url:URL
     private var cancelable:AnyCancellable?
@@ -34,22 +36,18 @@ class PinterestCollectionViewModel: ObservableObject {
     public var spacing:CGFloat = 5.0
     @Published var numberOfObjectsPerColumn: Int = 1
 
-    @Published public var collectionViewDataSource:Array<Array<ImageModel>> = []
+    @Published public var collectionViewDataSource:Array<Array<ImageViewModel>> = []
     @Published public var cellSize:CGSize = CGSize(width: 50, height: 50)
     @Published public var frameSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
     private var cellWidth:CGFloat
     
     /* -- iOS 14 changes*/
     
+    @available(iOS 14.0, *)
     @Published public var columns:Array<GridItem> = []
+    @available(iOS 14.0, *)
     @Published public var datasource:Array<ImageViewModel> = []
-    
-    private func calculateColumns(){
-        let gridItem = GridItem(.adaptive(minimum: self.cellWidth),
-                                spacing: self.spacing,
-                                alignment: .center)
-        columns = [gridItem]
-    }
+
     /* --  end iOS 14 changes**/
     
     init( columnsForPortrait: Int = 3 ) {
@@ -62,7 +60,9 @@ class PinterestCollectionViewModel: ObservableObject {
         }
         self.load()
         self.recalculateLayout()
-        self.calculateColumns()
+        if #available(iOS 14.0, *) {
+            self.calculateColumns()
+        }
     }
     
     deinit {
@@ -120,23 +120,31 @@ class PinterestCollectionViewModel: ObservableObject {
     
     fileprivate func oldLoadDatasource() {
         print("\n\n>>\ncollectionViewDataSource self.results.photos: \(String(describing: self.results?.photos))")
-        let chuncked = self.results != nil ? self.results!.photos.chunked(into: numberOfObjectsPerColumn) : []
+        
+        let photos = self.results != nil ? self.results!.photos
+            .map({ (imageM) -> ImageViewModel in
+            return ImageViewModel(imageModel: imageM, cache: cache)
+        }) : []
+        let chuncked = photos.chunked(into: numberOfObjectsPerColumn)
         var i = 0
         print("\n\n>>\n numberOfObjectsPerColumn:\(numberOfObjectsPerColumn) numberOfRows: \(numberOfRows)")
         for chunk in chuncked {
-            print("\n\n>>\ncollectionViewDataSource chunck [\(i)]: \(String(describing: chunk)) . count: \(chunk.count)")
+            print("\n\n>>\ncollectionViewDataSource chunck [\(i)]: \(String(describing: chunk)) . count: \(chunk.count)\n")
             i += 1
         }
         self.collectionViewDataSource = chuncked
     }
     
     private func loadDataSource() {
-        oldLoadDatasource()
-        self.datasource = self.results?.photos
-            .map({ (imageM) -> ImageViewModel in
-                return ImageViewModel(imageModel: imageM)
-            }) ?? []
+        if #available(iOS 14.0, *) {
+            newLoadDatasource()
+        }
+//            else {
+            oldLoadDatasource()
+//        }
     }
+    
+
     
     private func updateCellSize(){
         let h = (UIScreen.main.bounds.size.height/3) - (self.spacing * 2)
@@ -152,4 +160,23 @@ class PinterestCollectionViewModel: ObservableObject {
         cancelable?.cancel()
     }
     
+}
+
+
+extension PinterestCollectionViewModel {
+    
+    @available(iOS 14.0, *)
+    private func calculateColumns(){
+        let gridItem = GridItem(.adaptive(minimum: self.cellWidth),
+                                spacing: self.spacing,
+                                alignment: .center)
+        columns = [gridItem]
+    }
+    @available(iOS 14.0, *)
+    private func newLoadDatasource() {
+        self.datasource = self.results?.photos
+            .map({ (imageM) -> ImageViewModel in
+                return ImageViewModel(imageModel: imageM, cache: cache)
+            }) ?? []
+    }
 }

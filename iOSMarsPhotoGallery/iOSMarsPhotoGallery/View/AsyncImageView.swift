@@ -29,7 +29,6 @@ struct AsyncImageView<Placeholder:View>: View {
     
     init(viewModel:ImageViewModel,
          placeholder: Placeholder? = nil,
-         cache: ImageCache? = nil,
          configuration: @escaping(Image) -> Image = {$0}) {
         
         self.imageVM = viewModel
